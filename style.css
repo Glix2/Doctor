@@ -940,7 +940,7 @@ nav::before {
   position: absolute;
   width: 50%;
   height: 2px;
-  bottom: 20px;
+  bottom: 15px;
   left: 0;
   margin-left: 25%;
   background-color: var(--dropdownbackground);
@@ -1264,6 +1264,10 @@ nav::before {
 
 .repairimg {
   padding: 2rem 0 0 3rem;
+
+}
+.repairpic {
+  box-shadow: 19px 19px 0px -4px var(--dropdownbackground);
 }
 
 .repaircontent{
