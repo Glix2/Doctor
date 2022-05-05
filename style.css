@@ -343,9 +343,10 @@ nav::before {
 }
 .aboutpic {
   height: auto;
-  width: 100%;
-  max-height: 334px;
-  max-width: 488px;
+  width: 300px;
+  height: 300px;
+  margin-top: 2rem;
+
   box-shadow: -20px 20px 0px 0px var(--dropdownbackground);
 }
 .logowrap {
@@ -381,10 +382,28 @@ nav::before {
   font-weight: 300;
   padding-left: 3rem;
 }
-.time {
+.instagram {
+  position: absolute;
+  left: -100px;
+  top: 200px;
+  height: 50px;
+  width: 50px;
+  background: var(--whitetext);
+  z-index: 99;
+  padding: .25rem;
+  border: 2px solid gray;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  animation: instaslide .5s forwards;
+  animation-delay: 1s;
 }
-.phone {
-
+@keyframes instaslide {
+  from {
+    left: -50px;
+  }
+  to {
+    left: 0;
+  }
 }
 
 .contact-svg2 {
@@ -493,7 +512,8 @@ nav::before {
 
 }
 
-.ctabutton {
+.ctabutton,
+.virtualcta {
   background-color: var(--whitetext);
   text-decoration: none;
   color: var(--primarycolor);
@@ -514,36 +534,82 @@ nav::before {
 
 .bottombanner {
   width: 100%;
-  background-color: var(--servicegray);
-  padding: 1.5rem;
-  text-align: center;
+  background-color: var(--primarycolor);
   box-shadow: 0px -5px 15px -1px #000000;
+  color: white;
+  height: 80px;
+  overflow: hidden;
+  display: flex;
+}
+.virtualwrap {
+  position: relative;
+  max-width: 1600px;
+  margin: 0 auto;
+  display: flex;
+
+}
+.bottombanner-right {
+  position: relative;
+  right: 0px;
+  min-width: 500px;
+  height: 80px;
+  background: var(--lightprimary);
+  display: flex;
+  align-items: center;
+}
+
+.bottombanner-right::after {
+  content: '';
+  position: absolute;
+  left: -24px;
+  width: 48px;
+  height: 80px;
+  background-color: var(--lightprimary);
+  transform: skewX(-30deg);
+
 
 }
 
-.militarytitle {
+.virtualservice {
+  font-size: 1.1rem;
+  font-weight: 300;
+  padding: 1rem 2rem;
+  margin-left: auto;
+  max-width: 1000px;
+  min-width: 600px;
+  text-align: center;
+}
+.virtualcta {
+  background-color: var(--whitetext);
+  margin-left: 4rem;
+  padding: .5rem 1.5rem;
+  border-radius: 500px;
+}
+.militarywrap {
+  max-width: 1300px;
   margin: 0 auto;
-  color: var(--bodytextcolor);
+  padding: 1rem;
+}
+.militarytitle {
+  color: var(--primarycolor);
   font-size: 1.4rem;
-  font-weight: 400;
-  text-transform: uppercase;
-  padding-bottom: .2rem;
-
+  text-align: center;
 }
 .militarytext {
-  margin: 0 auto;
-  color: var(--bodytextcolor);
-  font-weight: 400;
-  font-size: 1rem;
-
+  margin-top: .5rem;
+  color: var(--faqtextcolor);
+  text-align: center;
 
 }
+
+
+
 
 .about {
   padding: 1rem 2rem;
   display: flex;
   margin: 0 auto;
-  max-width: 1420px;
+  max-width: 1220px;
 
 }
 .aboutwrap {
@@ -554,6 +620,7 @@ nav::before {
   padding-top: 1rem;
   font-size: .9rem;
   line-height: 1.9rem;
+
 
 }
 
@@ -607,11 +674,16 @@ nav::before {
 
 }
 
-
+.baltimore {
+  text-align: center;
+  padding-bottom: 2rem;
+  text-transform: uppercase;
+}
 
 .services {
   width: 100%;
-  padding-top: 5rem;
+  padding-top: 1rem;
+  color: var(--bodytextcolor);
 
 }
 
@@ -1062,7 +1134,6 @@ nav::before {
   display: grid;
   grid-template-columns: 1fr 1fr;
   max-width: 900px;
-
   margin: 6rem auto;
   padding: 2rem;
   border: 1px solid rgba(0, 0, 0, 0.4);
@@ -1273,12 +1344,17 @@ nav::before {
 .repaircontent{
   flex: 1;
 }
-.repaircontent h4 {
+.repaircontent h4,
+.virtualcontent h4 {
   font-size: 1.5rem;
   font-weight: 400;
   padding-block: 2rem;
   color: var(--primarycolor);
   font-family: 'Roboto',sans-serif;
+}
+.virtualcontent h4 {
+  font-size: 2rem;
+  padding-left: 1rem;
 }
 .repaircontent p {
   text-align: justify;
@@ -1287,6 +1363,43 @@ nav::before {
   padding-bottom: 1rem;
   font-size: .9rem;
   color: var(--bodytextcolor);
+}
+.virtualcontent p {
+  font-weight: 400;
+  line-height: 1.8rem;
+  text-indent: 1.5rem;
+  font-size: 1rem;
+  color: var(--bodytextcolor);
+}
+.virtualcontent  {
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: var(--servicegray);
+  padding: 3rem 4.5rem;
+  border-radius: 10px;
+}
+.virtualicon {
+  height: 140px;
+}
+.virtualimgwrap {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+.bottomvirtualtext {
+  padding-top: 2rem;
+  text-indent: 0 !important;
+  text-align: center;
+}
+.bottomvirtualtext:nth-last-child(1) {
+  text-transform: uppercase;
+  display: table;
+  margin: 0 auto;
+  padding: .5rem 1rem;
+  margin-top: 3rem;
+  color: var(--whitetext);
+  font-size: 1rem;
+  background-color: var(--primarycolor);
 }
 .repairsubtext {
   color: var(--bodytextcolor);
@@ -1316,7 +1429,7 @@ nav::before {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  padding: 3rem 2rem 4rem 2rem;
+  padding: 8rem 2rem 4rem 2rem;
 }
 
 .topheader a{
@@ -1328,19 +1441,6 @@ nav::before {
 
 
 
-@media (max-width: 1260px) {
-  .about {
-    display: block;
-  }
-  .aboutpic {
-    display: inherit;
-    margin: 0 auto;
-  }
-  .aboutwrap {
-    padding: 3rem 0 0 0;
-  }
-}
-
 @media (max-width: 1125px) {
   .time {
     display: none;
@@ -1351,6 +1451,7 @@ nav::before {
 @media (max-width: 950px){
    .contactus {
      display: block;
+     max-width: 500px;
    }
    .leftcontact {
      display: flex;
@@ -1380,11 +1481,10 @@ nav::before {
    }
    .brands1,
    .brands2 {
-     width: 100%;
      height: auto;
    }
    .brandswrap {
-     padding-top: 0;
+     padding-top: 2rem;
    }
 }
 
@@ -1582,9 +1682,32 @@ nav::before {
     }
 }
 
+
+
+@media (max-width: 910px) {
+  .about {
+    display: block;
+  }
+  .aboutpic {
+    display: inherit;
+    margin: 0 auto;
+  }
+  .aboutwrap {
+    padding: 3rem 0 0 0;
+  }
+}
+
+
 @media (max-width: 870px) {
   .phone {
     display: none;
+  }
+}
+@media (max-width: 800px) {
+  .brands1,
+  .brands2 {
+    width: 100%;
+    height: auto;
   }
 }
 
