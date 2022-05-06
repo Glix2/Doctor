@@ -536,11 +536,9 @@ nav::before {
 }
 
 .bottombanner {
-  width: 100%;
   background-color: var(--primarycolor);
   box-shadow: 0px -5px 15px -1px #000000;
   color: white;
-  height: 80px;
   overflow: hidden;
   display: flex;
 }
@@ -553,9 +551,10 @@ nav::before {
 }
 .bottombanner-right {
   position: relative;
-  right: 0px;
+  right: 0;
+  bottom: 0;
   min-width: 500px;
-  height: 80px;
+  height: 85px;
   background: var(--lightprimary);
   display: flex;
   align-items: center;
@@ -566,7 +565,7 @@ nav::before {
   position: absolute;
   left: -24px;
   width: 48px;
-  height: 80px;
+  height: 85px;
   background-color: var(--lightprimary);
   transform: skewX(-30deg);
 
@@ -579,7 +578,6 @@ nav::before {
   padding: 1rem 2rem;
   margin-left: auto;
   max-width: 1000px;
-  min-width: 600px;
   text-align: center;
 }
 .virtualcta {
@@ -612,11 +610,12 @@ nav::before {
   padding: 2rem;
   display: flex;
   margin: 0 auto;
-  max-width: 1400px;
   grid-gap: 2rem;
+   max-width: 1200px;
 }
 .aboutwrap {
  padding: 2rem;
+
 }
 
 .frontaboutintro {
@@ -624,6 +623,7 @@ nav::before {
   padding-top: 1rem;
   font-size: .9rem;
   line-height: 1.9rem;
+
 }
 .aboutcta {
   display: inline-block;
@@ -632,6 +632,10 @@ nav::before {
   margin-top: 1rem;
   color: var(--primarycolor);
   font-weight: 500;
+}
+.aboutcta:hover {
+  background-color: var(--primarycolor);
+  color: var(--whitetext);
 }
 
 .servicetitle,
@@ -1079,7 +1083,9 @@ nav::before {
 .reviewbottomleft {
   display: flex;
 }
-
+.virtualcta2 {
+  display: none;
+}
 .reviewname {
   white-space: nowrap;
   font-weight: 400;
@@ -1390,11 +1396,13 @@ nav::before {
 }
 .virtualicon {
   height: 140px;
+  width: 125px;
 }
 .virtualimgwrap {
   display: flex;
   justify-content: center;
   margin-bottom: 2rem;
+  align-items: center;
 }
 .bottomvirtualtext {
   padding-top: 2rem;
@@ -1447,6 +1455,14 @@ nav::before {
 
 
 
+@media (max-width: 1375px) {
+  .virtualservice {
+    font-size: .9rem;
+    min-width: 480px;
+    height: 85px;
+    padding-block: .5rem;
+  }
+}
 
 
 
@@ -1455,10 +1471,24 @@ nav::before {
   .time {
     display: none;
   }
+
 }
 
 
-@media (max-width: 950px){
+@media (max-width: 960px){
+   .bottombanner {
+   }
+
+   .virtualcta {
+     position: relative;
+   }
+   .bottombanner-right {
+
+   }
+    .virtualservice {
+     font-size: .9rem;
+
+   }
    .contactus {
      display: block;
      max-width: 500px;
@@ -1720,13 +1750,26 @@ nav::before {
     height: auto;
   }
 }
-
+@media (max-width: 750px) {
+  .bottombanner-right {
+    display: none;
+  }
+}
 @media (max-width: 700px) {
   .email {
     display: none;
   }
+  .virtualcontent  {
+    padding: 2rem 1.5rem;
+  }
 }
 @media (max-width: 500px) {
+  .virtualicon {
+    overflow: hidden;
+  }
+  .virtualimgwrap {
+    flex-direction: column;
+  }
   .spavector {
     display: none;
   }
