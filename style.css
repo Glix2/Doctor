@@ -5,6 +5,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Anek+Tamil:wght@100;200;300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800&display=swap');
 *{
     padding: 0;
     margin: 0;
@@ -22,12 +23,13 @@
   --bodytextcolor: #333333;
   --whitetext: #fff;
   --lightprimary: #00a0de;
-  --faqtextcolor: #7288a2;
+  --faqtextcolor: #222222;
   --servicegray: #f6f6f6;
+  --dropdownresponsive: #0495b3;
 }
 
 body{
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Montserrat', sans-serif;
 
 }
 
@@ -120,7 +122,8 @@ section {
     font-weight: 300;
     padding-inline: 2rem;
     height: 100%;
-    place-items: center;
+    align-items: center;
+    justify-content: space-between;
 }
 .fa-caret-down {
 
@@ -140,7 +143,7 @@ nav::before {
   left: 0;
   width: 1rem;
   height: 45px;
-  background-color: var(--hamnavbackground);
+  background-color: var(--dropdownresponsive);
   transition: .5s;
 }
 
@@ -168,7 +171,7 @@ nav::before {
 
 }
 .callupper {
-  height: 50px;
+  height: 45px;
   display: grid;
   place-items: center;
 }
@@ -177,8 +180,8 @@ nav::before {
     display: flex;
     background-color: var(--navtextcolor);
     color: #000;
-    padding: .5rem 1rem;
-    font-size: 1rem;
+    padding: 1rem 1rem;
+    font-size: .9rem;
     align-items: center;
     justify-content: space-between;
     transition: .3s;
@@ -187,10 +190,11 @@ nav::before {
 .dropdown-link:hover > a{
     background-color: var(--primarycolor);
     color: white;
+
 }
 
-.dropdown-link:not(:nth-last-child(2)){
-    border-bottom: 1px solid #efefef;
+.dropdown-link {
+    border-bottom: 1px solid #e6e6e6;
 }
 
 .dropdown-link i{
@@ -236,6 +240,7 @@ nav::before {
     transform: translate(0, 0);
     opacity: 1;
     pointer-events: auto;
+    transition: .3s;
 }
 
 .hamburger-menu-container{
@@ -342,19 +347,24 @@ nav::before {
   margin-left: 2rem;
 }
 .aboutpic {
-  width: 350px;
-  height: 350px;
-  margin-top: 2rem;
-  box-shadow: -20px 20px 0px 0px var(--dropdownbackground);
+  position: relative;
+  height: 400px;
+  width: 600px;
+  right: -50px;
+  top: 50px;
+  box-shadow: 0px 0px 15px -2px #000000;
+
 }
 .logowrap {
   position: relative;
   bottom: -2px;
 }
 .aboutsubheader {
-  font-size: 1.3rem;
-  padding-top: .2rem;
-  color: var(--primarycolor);
+  font-size: 1.5rem;
+  padding-top: .5rem;
+  color: var(--bodytextcolor);
+  font-weight: 500;
+  line-height: 2rem;
 
 }
 .one {
@@ -416,17 +426,18 @@ nav::before {
   filter: invert(30%) sepia(97%) saturate(2230%) hue-rotate(175deg) brightness(99%) contrast(101%);
 }
 .timewrap h4 {
-  font-family: 'Open Sans', sans-serif;
   font-size: .85rem;
-  font-weight: 600;
+  font-weight: 500;
   padding-left: .5rem;
   white-space: nowrap;
-  opacity: .5;
+  opacity: .8;
 }
 .timewrap .headertitle {
   font-weight: 700;
   opacity: 1;
+  padding-bottom: .2rem;
 }
+
 
 .bannerwrap {
   display: flex;
@@ -500,16 +511,15 @@ nav::before {
 
 }
 .herotextwrap h2 {
-  font-size: clamp(2.5rem, 3.5vw, 5.5rem);
-  font-weight: 400;
-  font-family: 'Raleway', sans-serif;
+  font-size: clamp(2rem, 3.5vw, 3.5rem);
+  font-weight: 500;
   text-transform: uppercase;
   word-spacing: .5rem;
 }
 
 .herotextwrap h1 {
   font-size: 1rem;
-  font-weight: 300;
+  font-weight: 400;
   padding-block: 1.5rem;
   line-height: 1.6rem;
 
@@ -528,10 +538,12 @@ nav::before {
   font-size: .9rem;
   font-weight: 600;
   border-radius: 500px;
+  transition: .3s;
 }
 .ctabutton:hover {
   background-color: var(--primarycolor);
   color: white;
+  transition: .3s;
 
 }
 
@@ -579,6 +591,7 @@ nav::before {
   margin-left: auto;
   max-width: 1000px;
   text-align: center;
+  line-height: 1.5rem;
 }
 .virtualcta {
   background-color: var(--whitetext);
@@ -590,17 +603,10 @@ nav::before {
   max-width: 1300px;
   margin: 0 auto;
   padding: 1rem;
+    text-align: center;
 }
 .militarytitle {
-  color: var(--primarycolor);
-  font-size: 1.4rem;
-  text-align: center;
-}
-.militarytext {
-  margin-top: .5rem;
-  color: var(--faqtextcolor);
-  text-align: center;
-
+  padding-bottom: 1rem !important;
 }
 
 
@@ -608,53 +614,80 @@ nav::before {
 
 .about {
   padding: 2rem;
-  display: flex;
   margin: 0 auto;
   grid-gap: 2rem;
-   max-width: 1200px;
+  max-width: 1400px;
+
 }
 .aboutwrap {
- padding: 2rem;
-
+ padding-block: 2rem;
+ display: flex;
+}
+.abouttextwrap {
+  background-color: #ededed;
+  padding: 3rem 2rem 3rem 5rem;
+  max-width: 700px;
 }
 
-.frontaboutintro {
-  color: var(--faqtextcolor);
+.abouttext {
+  color: var(--bodytextcolor);
   padding-top: 1rem;
-  font-size: .9rem;
+  font-size: 1rem;
   line-height: 1.9rem;
+  text-indent: 1rem;
 
 }
 .aboutcta {
+  position: relative;
   display: inline-block;
   border: 2px solid var(--primarycolor);
-  padding: .3rem 2rem;
-  margin-top: 1rem;
+  padding: .5rem 2rem;
+  margin-top: 1.5rem;
   color: var(--primarycolor);
   font-weight: 500;
 }
+.aboutcta::before {
+  content: '';
+  position: absolute;
+  top:-2px;
+  left:-2px;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  border: 2px solid var(--primarycolor);
+  transition: .3s;
+}
+.aboutcta:hover::before {
+   transform: scale(1.1, 1.3);
+   transition: .6s;
+
+}
 .aboutcta:hover {
-  background-color: var(--primarycolor);
-  color: var(--whitetext);
+   background-color: var(--primarycolor);
+     color: var(--whitetext);
 }
 
 .servicetitle,
 .faqheader,
-.reviewheader {
+.reviewheader,
+.militarytitle {
   font-size: 1.5rem;
-  font-weight: 400;
+  font-weight: 500;
   position: relative;
   padding: 2rem 1rem;
   color: var(--bodytextcolor);
   margin: auto;
   display: table;
-  font-family: 'Bitter', sans-serif;
+  text-align: center;
+  text-transform: uppercase;
+  line-height: 2.5rem;
+
 }
 .frontabout {
-  margin-left: auto;
   font-size: 2rem;
-  font-weight: 400;
+  font-weight: 500;
   color: var(--bodytextcolor);
+  text-align: center;
 
 }
 
@@ -689,8 +722,8 @@ nav::before {
 
 .baltimore {
   text-align: center;
-  padding-bottom: 2rem;
   text-transform: uppercase;
+  font-weight: 500;
 }
 
 .services {
@@ -709,7 +742,7 @@ nav::before {
 .servicetitle::after {
   content: '';
   position: absolute;
-  bottom: 22px;
+  bottom: 26px;
   left: 50%;
   width: 60%;
   height: 3px;
@@ -754,7 +787,7 @@ nav::before {
   top: -25px;
   font-size: 1.3rem;
   font-weight: 500;
-  opacity: .7;
+  opacity: .9;
   padding-top: 1rem;
 }
 
@@ -774,7 +807,7 @@ nav::before {
   padding: 1rem;
   font-size: .9rem;
   text-align: center;
-  opacity: .8;
+  line-height: 1.5rem;
 }
 
 .card-cta {
@@ -804,7 +837,6 @@ nav::before {
 
 .card-cta:hover::before {
    transform: scale(1.1, 1.3);
-
    transition: .6s;
 }
 
@@ -839,35 +871,30 @@ nav::before {
 
 
 .faqsection {
-  max-width: 1200px;
   margin: 5rem auto 0 auto;
   padding-inline: 2rem;
+
 }
 
 .underline {
   position: relative;
 }
-.underline::after {
-  content: '';
-  position: absolute;
-  background-image: url("images/underline.png");
-  background-repeat: no-repeat;
-  background-size: contain;
-  bottom: -25px;
-  left: -23px;
-  width: 150px;
-  height: 35px;
 
-}
 .ozonetext {
-  font-size: .9rem;
-  color: var(--faqtextcolor);
+  max-width: 1200px;
+  font-size: 1rem;
+  color: var(--bodytextcolor);
   padding-block: 1rem 3rem;
-  justify-content: center;
-  line-height: 1.5rem;
+  line-height: 1.67rem;
   text-align: center;
-
-
+  margin: 0 auto;
+}
+.faqheader {
+  max-width: 1300px !important;
+}
+.color {
+  color: var(--primarycolor);
+  font-weight: 600;
 }
 .ozonetext p {
   max-width: 800px;
@@ -877,19 +904,21 @@ nav::before {
 
 .wholefaqwrap {
   display: flex;
-  align-items: flex-start;
-  justify-content: center;
   gap: 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 .faqwrap {
   margin: 0 auto;
 }
 .faqwrap h2 {
-  font-weight: 400;
+  color: var(--primarycolor);
+  font-weight: 500;
   padding-bottom: 1rem;
 }
 .faqspaimg {
- width: 450px;
+ width: 500px;
+ height: 330px;
  transition: .5s;
 }
 .accordion {
@@ -904,7 +933,7 @@ nav::before {
   display: block;
   text-align: left;
   width: 100%;
-  padding: 1em 0;
+  padding: 1em 2em 1em 0;
   color: var(--faqtextcolor);
   font-size: 1rem;
   font-weight: 400;
@@ -926,8 +955,8 @@ nav::before {
   border: 1px solid var(--primarycolor);
 }
 
-.accordion button .accordion-title {
-  padding: 1em 1.5em 1em 0;
+ .accordion-title {
+  padding-right: 2rem;
 }
 
 .accordion button .icon {
@@ -970,9 +999,8 @@ nav::before {
 }
 .accordion button[aria-expanded='true'] + .accordion-content {
   opacity: 1;
-  max-height: 5rem;
+  max-height: 10rem;
   transition: all 200ms linear;
-  will-change: opacity, max-height;
   padding-inline: 2rem;
 }
 .accordion .accordion-content {
@@ -984,8 +1012,9 @@ nav::before {
 }
 .accordion .accordion-content p {
   font-size: .9rem;
-  font-weight: 300;
+  font-weight: 400;
   padding-block: .5rem 1.2rem;
+  line-height: 1.5rem;
 }
 
 
@@ -998,13 +1027,11 @@ nav::before {
 
 .reviewsection {
   width: 100%;
-  padding-block: 5rem 8rem;
+  padding-block: 4rem 6rem;
   z-index: 1;
-  background: linear-gradient(rgba(255,255,255,0.7),rgba(255,255,255,0.7)), url("images/jetbackground.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
+  background: linear-gradient(rgba(0,132,157,.9),rgba(0,132,157,.9)), url('images/reviewphoto2.jpg') no-repeat;
   box-shadow: 0px 0px 23px -10px #000000;
+  background-position: bottom;
 
 
 }
@@ -1017,19 +1044,19 @@ nav::before {
 
 .reviewheader {
   margin-bottom: 1rem;
-  font-weight: 400;
+  color: var(--whitetext);
 }
 
 .reviewheader::before {
   content: '';
   position: absolute;
-  width: 50%;
+  width: 25%;
   height: 2px;
   bottom: 15px;
   left: 0;
-  margin-left: 25%;
-  background-color: var(--dropdownbackground);
-  opacity: .7;
+  margin-left: 37.5%;
+  background-color: var(--whitetext);
+  opacity: .5;
 }
 .reviewwrap {
   width: 100%;
@@ -1044,29 +1071,28 @@ nav::before {
 
 .reviewbox {
   max-width: 400px;
-  background: white;
   transition: .3s;
-  border: 2px solid var(--cardgray);
+  border: 1px solid var(--whitetext);
   -webkit-box-shadow: 0px 8px 26px -18px rgba(0,0,0,0.36);
- box-shadow: 0px 8px 26px -18px rgba(0,0,0,0.36);
- margin-inline: 1rem;
+  box-shadow: 0px 8px 26px -18px rgba(0,0,0,0.36);
+  margin-inline: 1rem;
+
+    color: var(--whitetext);
 }
 .quote {
   height: 24px;
   margin: 1rem 0 .5rem 2rem;
-  filter: invert(42%) sepia(53%) saturate(5282%) hue-rotate(173deg) brightness(95%) contrast(101%);
+ filter: invert(100%) sepia(6%) saturate(603%) hue-rotate(230deg) brightness(117%) contrast(100%);
 
 }
 
 .reviewtext {
-  font-family: 'Open Sans', sans-serif;
   padding-inline: 1.5rem;
   margin: auto;
   text-align: center;
   line-height: 1.5rem;
   font-size: .9rem;
   font-weight: 400;
-  color: var(--bodytextcolor);
   position: relative;
 }
 
@@ -1087,18 +1113,18 @@ nav::before {
   display: none;
 }
 .reviewname {
+  color: inherit;
   white-space: nowrap;
   font-weight: 400;
-  color: var(--bodytextcolor);
   margin-top: 2rem;
   margin-left: 1.5rem;
 }
 
 
 .googleicon {
-  width: 75px;
-  margin: 2rem 1.5rem 1rem auto;
-
+  width: 42px;
+  margin: 1rem 1.5rem 1rem auto;
+  filter: invert(18%) sepia(2%) saturate(11%) hue-rotate(1deg) brightness(91%) contrast(88%);
 }
 
 .fadein {
@@ -1156,7 +1182,6 @@ nav::before {
 }
 
 .leftcontact {
-  min-width: 400px;
   padding-right: 2rem;
 }
 .leftcontact h3 {
@@ -1172,6 +1197,7 @@ nav::before {
 
 .lowerspaphoto {
   height: 124px;
+  width: 150px;
   position: relative;
   top: -15px;
 }
@@ -1266,7 +1292,8 @@ nav::before {
   display: flex;
   justify-content: space-around;
   margin: auto;
-  width: 400px;
+  max-width: 400px;
+
 }
 .footer ul li a {
   color: inherit;
@@ -1324,17 +1351,41 @@ nav::before {
     transform: skewY(-20deg);
   }
 
-.servicebanner {
+.servicebannerwrap {
   background: linear-gradient(0deg, rgba(0,94,112,0.95), rgba(0,94,112,0.95)), url("images/topbackgroundreverse.jpg");
   background-repeat: no-repeat;
+  display: flex;
+  height: 250px;
+  width: 100%;
 }
-
-.servicebanner h3 {
-  padding: 3rem;
-  color: var(--whitetext);
-  font-size: 2.5rem;
-  font-weight: 300;
-  text-transform: uppercase;
+.servicebannerleft {
+  position: relative;
+  background-color: #d0d3d5;
+  flex: 1;
+}
+.servicebannertitle {
+  position: absolute;
+  background-color:  #eff0f1;
+  text-align: center;
+  padding: 2.5rem 2rem;
+  white-space: nowrap;
+  top: 15%;
+  left: 10%;
+}
+.servicebannertitle h4 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  padding-bottom: 2rem;
+}
+.servicebannertitle p {
+  font-weight: 500;
+}
+.servicebannerright {
+  background-image: url("images/aboutphoto.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  flex: 2;
 }
 
 .repairs {
@@ -1361,23 +1412,23 @@ nav::before {
 }
 .repaircontent h4,
 .virtualcontent h4 {
-  font-size: 1.5rem;
-  font-weight: 400;
+  font-size: 1.4rem;
+  font-weight: 500;
   padding-block: 2rem;
-  color: var(--primarycolor);
-  font-family: 'Roboto',sans-serif;
+  color: var(--bodytextcolor);
 }
 .virtualcontent h4 {
   font-size: 2rem;
   padding-left: 1rem;
 }
 .repaircontent p {
-  text-align: justify;
+
   line-height: 1.5rem;
   text-indent: 1.5rem;
   padding-bottom: 1rem;
   font-size: .9rem;
   color: var(--bodytextcolor);
+  max-width: 700px;
 }
 .virtualcontent p {
   font-weight: 400;
@@ -1421,10 +1472,10 @@ nav::before {
 }
 .repairsubtext {
   color: var(--bodytextcolor);
-  font-size: .9rem;
   text-align: center;
   max-width: 1100px;
   margin: 0 auto;
+  line-height: 1.6rem;
 }
 .repaircontent ul {
   padding-left: 2rem;
@@ -1447,7 +1498,7 @@ nav::before {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  padding: 8rem 2rem 4rem 2rem;
+  padding: 1rem 2rem 5rem 2rem;
 }
 
 .topheader a{
@@ -1464,6 +1515,31 @@ nav::before {
   }
 }
 
+@media (max-width: 1200px) {
+  .aboutwrap {
+    flex-direction: column;
+    align-items: center;
+  }
+  .abouttextwrap {
+    background-color: var(--servicegray);
+    padding: 5rem 2rem 2rem 2rem;
+    max-width: 900px;
+  }
+  .aboutpic {
+    right: 0;
+    top: 25px;
+  }
+
+  .abouttextwrap > p {
+    color: var(--bodytextcolor);
+    padding-top: 1rem;
+    font-size: 1rem;
+    line-height: 1.9rem;
+    text-indent: 1rem;
+
+  }
+
+}
 
 
 
@@ -1509,22 +1585,18 @@ nav::before {
      display: block;
    }
    .faqspaimg {
-     width: 350px;
      display: inherit;
      margin: 0 auto;
      padding-bottom: 1rem;
      transition: .5s;
    }
-   .faqheader {
-     text-align: center;
-     line-height: 2.5rem;
-   }
+
    .brands1,
    .brands2 {
      height: auto;
    }
    .brandswrap {
-     padding-top: 2rem;
+    padding: 0rem .5rem 2rem .5rem;
    }
 }
 
@@ -1567,16 +1639,18 @@ nav::before {
         width: 100%;
         background-color: var(--primarycolor);
         flex-direction: column;
-        align-items: center;
+        align-items: flex-start;
         justify-content: space-between;
         overflow-x: hidden;
         overflow-y: auto;
         transform: translateX(110%);
+        text-align: center;
 
     }
     nav::before {
       width: 100%;
       transition: .5s;
+      height: 45px;
     }
 
     #check:checked ~ .nav-btn{
@@ -1592,16 +1666,16 @@ nav::before {
       background: red;
     }
     .nav-links{
-        flex: initial;
+        display: flex;
+        margin: 0 auto;
         width: 100%;
-        background: var(--primarycolor)
-
 
     }
 
     .nav-links > ul{
         flex-direction: column;
         gap: 0rem;
+        width: 100%;
     }
 
     .nav-link{
@@ -1616,13 +1690,14 @@ nav::before {
     .nav-link > a{
         line-height: 1;
         padding: 1.6rem 2rem;
+        text-align: center;
 
 
     }
 
     .nav-link:hover > a{
         transform: scale(1);
-        background: var(--hamnavbackground);
+
 
     }
 
@@ -1635,7 +1710,7 @@ nav::before {
         pointer-events: auto;
         width: 100%;
         padding: 0;
-        background-color: #3183ac;
+        background-color: var(--dropdownresponsive);
         display: none;
     }
 
@@ -1653,10 +1728,9 @@ nav::before {
       justify-content: center;
     }
     .dropdown-link > a{
-
         background-color: transparent;
-        color: var(--navtextcolor);
-        padding: 1.2rem 2rem;
+        color: var(--whitetext);
+        padding: 1.5rem 2rem;
         line-height: 1;
     }
 
@@ -1668,7 +1742,7 @@ nav::before {
         padding: 1.2rem 2rem 1.2rem 4rem;
     }
 
-    .dropdown-link:not(:nth-last-child(2)){
+    .dropdown-link{
         border-bottom: none;
     }
 
@@ -1681,16 +1755,14 @@ nav::before {
     }
 
     .nav-link:hover .arrow{
-        background-color: var(--secondarycolor);
+        display: none;
     }
 
     .dropdown .dropdown .arrow{
         display: none;
     }
 
-    .dropdown-link:hover > a{
-        background-color: var(--dropdownhover);
-    }
+
 
     .dropdown-link:first-child:hover ~ .arrow{
         background-color: var(--secondarycolor);
@@ -1724,18 +1796,6 @@ nav::before {
 
 
 
-@media (max-width: 910px) {
-  .about {
-    display: block;
-  }
-  .aboutpic {
-    display: inherit;
-    margin: 0 auto;
-  }
-  .aboutwrap {
-    padding: 3rem 0 0 0;
-  }
-}
 
 
 @media (max-width: 870px) {
@@ -1763,7 +1823,21 @@ nav::before {
     padding: 2rem 1.5rem;
   }
 }
+@media (max-width: 650px) {
+.aboutpic {
+  width: 100%;
+  height: auto;
+
+}
+
+@media (max-width: 550px){
+  .faqspaimg {
+    width: 100%;
+    height: auto;
+  }
+}
 @media (max-width: 500px) {
+
   .virtualicon {
     overflow: hidden;
   }
@@ -1790,5 +1864,43 @@ nav::before {
     .three {
      letter-spacing: normal;
      padding-block: 1rem;
-    }
+
+}
+@media (max-width: 460px) {
+  .about {
+    padding: 0;
+  }
+  .aboutpic {
+  padding-inline: 1rem;
+  box-shadow: none;
+}
+  .aboutwrap {
+    padding-top: 0;
+  }
+  .abouttextwrap {
+    padding-inline: 1rem;
+  }
+  .faqsection {
+    padding-inline: 1rem;
+    padding-bottom: 3rem;
+  }
+
+  .leftcontact {
+    padding-right: 0;
+  }
+  .topcontact {
+    text-align: center;
+  }
+  .lowerspaphoto {
+    top: 0;
+    margin: 0 auto;
+  }
+  .topcontactwrap {
+    flex-direction: column;
+  }
+  .contactus {
+    padding: 1rem;
+  }
+
+
 }
