@@ -104,7 +104,6 @@ section {
     display: flex;
     justify-content: flex-end;
     height: 100%;
-
 }
 
 .nav-link{
@@ -133,8 +132,9 @@ section {
     margin-left: .2rem;
 }
 
-.nav-link:hover {
-
+.nav-link a:hover {
+  color: var(--whitetext);
+  background-color: var(--primarycolor);
 }
 nav::before {
   content: '';
@@ -187,13 +187,8 @@ nav::before {
     transition: .3s;
 }
 
-.dropdown-link:hover > a{
-    background-color: var(--primarycolor);
-    color: white;
 
-}
-
-.dropdown-link {
+.dropdown-link:nth-last-of-type(n + 2){
     border-bottom: 1px solid #e6e6e6;
 }
 
@@ -365,6 +360,7 @@ nav::before {
   color: var(--bodytextcolor);
   font-weight: 500;
   line-height: 2rem;
+  padding-right: 4rem;
 
 }
 .one {
@@ -394,6 +390,7 @@ nav::before {
   display: flex;
   font-weight: 300;
   padding-left: 3rem;
+  align-items: center;
 }
 .instagram {
   position: absolute;
@@ -420,7 +417,7 @@ nav::before {
 }
 
 .contact-svg2 {
-  margin-top: .25rem;
+
   width: 30px;
   height: 30px;
   filter: invert(30%) sepia(97%) saturate(2230%) hue-rotate(175deg) brightness(99%) contrast(101%);
@@ -431,6 +428,7 @@ nav::before {
   padding-left: .5rem;
   white-space: nowrap;
   opacity: .8;
+  padding-bottom: .2rem;
 }
 .timewrap .headertitle {
   font-weight: 700;
@@ -546,7 +544,6 @@ nav::before {
   transition: .3s;
 
 }
-
 .bottombanner {
   background-color: var(--primarycolor);
   box-shadow: 0px -5px 15px -1px #000000;
@@ -570,6 +567,7 @@ nav::before {
   background: var(--lightprimary);
   display: flex;
   align-items: center;
+  transition: .3s;
 }
 
 .bottombanner-right::after {
@@ -619,9 +617,15 @@ nav::before {
   max-width: 1400px;
 
 }
+.aboutpagewrap {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 3rem 1rem;
+}
 .aboutwrap {
- padding-block: 2rem;
  display: flex;
+ margin: 0 auto;
 }
 .abouttextwrap {
   background-color: #ededed;
@@ -671,7 +675,7 @@ nav::before {
 .faqheader,
 .reviewheader,
 .militarytitle {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   font-weight: 500;
   position: relative;
   padding: 2rem 1rem;
@@ -681,7 +685,6 @@ nav::before {
   text-align: center;
   text-transform: uppercase;
   line-height: 2.5rem;
-
 }
 .frontabout {
   font-size: 2rem;
@@ -723,12 +726,13 @@ nav::before {
 .baltimore {
   text-align: center;
   text-transform: uppercase;
-  font-weight: 500;
+  font-weight: 600;
+  padding: .5rem;
 }
 
 .services {
   width: 100%;
-  padding-top: 1rem;
+  padding-top: 2rem;
   color: var(--bodytextcolor);
 
 }
@@ -755,10 +759,11 @@ nav::before {
   top: -18px;
   font-size: 1.2rem;
   color: var(--faqtextcolor);
+  padding: 0 .5rem 1rem .5rem;
 }
 .card {
-
   width: 300px;
+  height: 391px;
   border: 3px solid var(--primarycolor);
   border-radius: 5px;
   margin-block: 3rem;
@@ -810,7 +815,8 @@ nav::before {
   line-height: 1.5rem;
 }
 
-.card-cta {
+.card-cta,
+.card-ctaproblem {
   display: table;
   position: relative;
   bottom: -22px;
@@ -823,6 +829,10 @@ nav::before {
   transition: .3s;
   box-sizing: border-box;
 }
+.card-ctaproblem {
+  bottom: -47px;
+}
+.card-ctaproblem::before,
 .card-cta::before {
   content: '';
   position: absolute;
@@ -834,7 +844,7 @@ nav::before {
   border: 2px solid var(--primarycolor);
   transition: .3s;
 }
-
+.card-ctaproblem:hover::before,
 .card-cta:hover::before {
    transform: scale(1.1, 1.3);
    transition: .6s;
@@ -1001,7 +1011,7 @@ nav::before {
   opacity: 1;
   max-height: 10rem;
   transition: all 200ms linear;
-  padding-inline: 2rem;
+  padding-inline: 1rem;
 }
 .accordion .accordion-content {
   opacity: 0;
@@ -1031,6 +1041,7 @@ nav::before {
   z-index: 1;
   background: linear-gradient(rgba(0,132,157,.9),rgba(0,132,157,.9)), url('images/reviewphoto2.jpg') no-repeat;
   box-shadow: 0px 0px 23px -10px #000000;
+  background-size: cover;
   background-position: bottom;
 
 
@@ -1111,6 +1122,7 @@ nav::before {
 }
 .virtualcta2 {
   display: none;
+  position: relative;
 }
 .reviewname {
   color: inherit;
@@ -1120,7 +1132,58 @@ nav::before {
   margin-left: 1.5rem;
 }
 
-
+.lefttoright {
+  animation: lefttoright 1s;
+}
+.righttoleft {
+  animation: righttoleft 1s;
+}
+.bottomtotop {
+  animation: bottomtotop 1s;
+}
+.toptobottom {
+  animation: toptobottom 1s;
+}
+@keyframes toptobottom {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+@keyframes bottomtotop {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+@keyframes lefttoright {
+  from {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+@keyframes righttoleft {
+  from {
+    transform: translateX(100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
 .googleicon {
   width: 42px;
   margin: 1rem 1.5rem 1rem auto;
@@ -1222,22 +1285,24 @@ nav::before {
 }
 
 .contactbox {
-  display: table;
+  display: flex;
   padding: .4rem .7rem .3rem 0;
   grid-gap: 1rem;
   margin-bottom: .5rem;
-  display: flex;
+  align-items: center;
+
   }
 
   .contact-svg {
     width: 30px;
     height: 30px;
     opacity: 1;
-    margin-top: .25rem;
+
   }
 
   .contactinfobox p {
     font-size: .9rem;
+    padding-bottom: .2rem;
   }
 
   .contactinfobox {
@@ -1302,7 +1367,9 @@ nav::before {
 }
 .footer ul li {
 }
-
+.footer ul li:hover {
+  color: #dedede;
+}
 .footer h5 {
   font-size: 1.5rem;
   padding-block: 3rem 1rem;
@@ -1352,78 +1419,132 @@ nav::before {
   }
 
 .servicebannerwrap {
-  background: linear-gradient(0deg, rgba(0,94,112,0.95), rgba(0,94,112,0.95)), url("images/topbackgroundreverse.jpg");
-  background-repeat: no-repeat;
   display: flex;
   height: 250px;
   width: 100%;
+  padding-bottom: 2rem;
 }
 .servicebannerleft {
-  position: relative;
   background-color: #d0d3d5;
+  display: flex;
   flex: 1;
+  align-items: center;
 }
 .servicebannertitle {
-  position: absolute;
+  position: relative;
   background-color:  #eff0f1;
-  text-align: center;
   padding: 2.5rem 2rem;
-  white-space: nowrap;
-  top: 15%;
-  left: 10%;
+  right: -50px;
+  width: 100%;
+  height: 80%;
+
 }
 .servicebannertitle h4 {
   font-size: 1.8rem;
   font-weight: 600;
-  padding-bottom: 2rem;
+  padding-bottom: 1rem;
 }
 .servicebannertitle p {
   font-weight: 500;
+  line-height: 1.5rem;
 }
-.servicebannerright {
-  background-image: url("images/aboutphoto.jpg");
+.repairbannerright,
+.aboutbannerright,
+.drainbannerright,
+.monthlybannerright,
+.refurbbannerright,
+.virtualbannerright {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   flex: 2;
 }
-
-.repairs {
-
+.aboutbannerright {
+  background-image: url("images/aboutbanner1.jpg");
+}
+.repairbannerright {
+  background-image: url("images/servicebanner2.jpg");
+}
+.drainbannerright {
+  background-image: url("images/servicebanner3.jpg");
+}
+.monthlybannerright {
+  background-image: url("images/servicebanner4.jpg");
+}
+.refurbbannerright {
+  background-image: url("images/servicebanner1.jpg");
+}
+.virtualbannerright {
+  background-image: url("images/virtualbanner1.jpg");
 }
 
 .repairwrap {
   display: flex;
   max-width: 1300px;
   margin: 0 auto;
-  padding: 4rem 2rem 2rem 2rem;
+  padding: 2rem 3rem 4rem 3rem;
 }
-
+.serviceheader {
+  position: relative;
+  display: table;
+  margin: 0 auto;
+  margin-top: 3rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 1.3rem;
+}
+.serviceheader::before {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  width: 300px;
+  height: 2px;
+  background-color: gray;
+  opacity: .8;
+}
+.serviceheadertext {
+  max-width: 1000px;
+  text-align: center;
+  margin: 0 auto;
+  font-size: .95rem;
+  margin-top: 1.5rem;
+  line-height: 1.6rem;
+}
 .repairimg {
   padding: 2rem 0 0 3rem;
 
 }
 .repairpic {
   box-shadow: 19px 19px 0px -4px var(--dropdownbackground);
+  width: 450px;
+  height: 450px;
 }
-
+.repairpicdrain {
+  box-shadow: 19px 19px 0px -4px var(--dropdownbackground);
+  width: 500px;
+  height: 282px;
+}
 .repaircontent{
   flex: 1;
 }
+.aboutpagecontent h4,
 .repaircontent h4,
 .virtualcontent h4 {
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   font-weight: 500;
-  padding-block: 2rem;
+  padding-block: 2rem 1rem;
   color: var(--bodytextcolor);
+  line-height: 1.6rem;
 }
 .virtualcontent h4 {
   font-size: 2rem;
   padding-left: 1rem;
 }
-.repaircontent p {
-
-  line-height: 1.5rem;
+.repaircontent p,
+.aboutpagecontent p{
+  line-height: 1.7rem;
   text-indent: 1.5rem;
   padding-bottom: 1rem;
   font-size: .9rem;
@@ -1476,6 +1597,8 @@ nav::before {
   max-width: 1100px;
   margin: 0 auto;
   line-height: 1.6rem;
+  padding-bottom: 2rem;
+
 }
 .repaircontent ul {
   padding-left: 2rem;
@@ -1501,23 +1624,36 @@ nav::before {
   padding: 1rem 2rem 5rem 2rem;
 }
 
-.topheader a{
+.virtualarrow {
+  position: absolute;
+  bottom: 0px;
+  width: 20px;
+  margin-left: .4rem;
+  filter: invert(100%) sepia(6%) saturate(603%) hue-rotate(230deg) brightness(117%) contrast(100%);
+}
+.virtualcta2:hover {
+  color: #d4d4d4;
+}
+.virtualcta2:hover .virtualarrow {
+  filter: invert(98%) sepia(1%) saturate(2311%) hue-rotate(236deg) brightness(111%) contrast(74%);
 }
 
 
+@media (max-width: 1330px) {
+.bottombanner-right {
+  min-width: 300px;
+}
+.time {
+  display: none;
+}
 
-@media (max-width: 1375px) {
-  .virtualservice {
-    font-size: .9rem;
-    min-width: 480px;
-    height: 85px;
-    padding-block: .5rem;
-  }
 }
 
 @media (max-width: 1200px) {
+
   .aboutwrap {
     flex-direction: column;
+    justify-content: center;
     align-items: center;
   }
   .abouttextwrap {
@@ -1529,41 +1665,48 @@ nav::before {
     right: 0;
     top: 25px;
   }
-
-  .abouttextwrap > p {
-    color: var(--bodytextcolor);
-    padding-top: 1rem;
-    font-size: 1rem;
-    line-height: 1.9rem;
-    text-indent: 1rem;
+  .aboutsubheader {
+    padding-right: 0;
 
   }
+
 
 }
 
 
 
 @media (max-width: 1125px) {
-  .time {
+
+  .virtualservice {
+   font-size: .9rem;
+
+ }
+
+}
+@media (max-width: 1053px)  {
+  .email {
     display: none;
   }
-
 }
 
 
 @media (max-width: 960px){
-   .bottombanner {
-   }
 
-   .virtualcta {
-     position: relative;
-   }
+  .virtualservice {
+   line-height: 1.2rem;
+ }
+  .virtualctatext {
+    font-size: 1rem;
+  }
+  .bottombanner {
+      }
+  .virtualcta2 {
+    display: inline-block;
+    color: var(--whitetext);
+    padding-left: .5rem;
+  }
    .bottombanner-right {
-
-   }
-    .virtualservice {
-     font-size: .9rem;
-
+     display: none;
    }
    .contactus {
      display: block;
@@ -1655,7 +1798,7 @@ nav::before {
 
     #check:checked ~ .nav-btn{
         transform: translateX(0);
-        height: 60vh;
+        height: 100vh;
     }
 
     #check:checked ~ .nav-btn .nav-link,
@@ -1669,7 +1812,6 @@ nav::before {
         display: flex;
         margin: 0 auto;
         width: 100%;
-
     }
 
     .nav-links > ul{
@@ -1727,6 +1869,7 @@ nav::before {
       display: flex;
       justify-content: center;
     }
+
     .dropdown-link > a{
         background-color: transparent;
         color: var(--whitetext);
@@ -1743,7 +1886,7 @@ nav::before {
     }
 
     .dropdown-link{
-        border-bottom: none;
+        border-bottom: none !important;
     }
 
     .arrow{
@@ -1795,19 +1938,33 @@ nav::before {
 }
 
 
-
-
-
-@media (max-width: 870px) {
+@media (max-width: 800px) {
   .phone {
     display: none;
   }
-}
-@media (max-width: 800px) {
   .brands1,
   .brands2 {
     width: 100%;
     height: auto;
+  }
+  .servicewrap {
+    padding-block: 2rem;
+  }
+  .faqsection {
+    margin-top: 2rem;
+  }
+  .faqheader,
+  .reviewheader,
+  .militarytitle {
+    font-size: 1.2rem;
+    padding: 1rem 1rem;
+    line-height: 1.5rem;
+  }
+  .reviewheader::before {
+    display: none;
+  }
+  .reviewsection {
+    padding-block: 2rem 3rem;
   }
 }
 @media (max-width: 750px) {
@@ -1816,26 +1973,35 @@ nav::before {
   }
 }
 @media (max-width: 700px) {
-  .email {
-    display: none;
-  }
+
   .virtualcontent  {
-    padding: 2rem 1.5rem;
+    padding: 2rem .75rem;
   }
 }
 @media (max-width: 650px) {
 .aboutpic {
   width: 100%;
   height: auto;
+}
+.ctabutton {
+    padding: .5rem 1.4rem;
+    margin: 0 auto;
+    text-transform: uppercase;
+    font-size: .8rem;
+    font-weight: 600;
+    border-radius: 500px;
+    transition: .3s;
+  }
 
 }
 
 @media (max-width: 550px){
-  .faqspaimg {
+  .wholefaqwrap .faqspaimg {
     width: 100%;
     height: auto;
   }
 }
+
 @media (max-width: 500px) {
 
   .virtualicon {
@@ -1901,6 +2067,8 @@ nav::before {
   .contactus {
     padding: 1rem;
   }
-
+  .instagram {
+    display: none;
+  }
 
 }
