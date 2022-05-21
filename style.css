@@ -131,11 +131,11 @@ section {
 .nav-link > a > i{
     margin-left: .2rem;
 }
-
 .nav-link a:hover {
   color: var(--whitetext);
   background-color: var(--primarycolor);
 }
+
 nav::before {
   content: '';
   position: absolute;
@@ -174,6 +174,9 @@ nav::before {
   height: 45px;
   display: grid;
   place-items: center;
+  width: calc(100% + 56px);
+  padding-inline: 3rem;
+  color: var(--whitetext);
 }
 
 .dropdown-link > a{
@@ -398,7 +401,7 @@ nav::before {
   top: 200px;
   height: 50px;
   width: 50px;
-  background: var(--whitetext);
+  background-color: var(--whitetext);
   z-index: 99;
   padding: .25rem;
   border: 2px solid gray;
@@ -406,6 +409,9 @@ nav::before {
   border-bottom-right-radius: 15px;
   animation: instaslide .5s forwards;
   animation-delay: 1s;
+}
+.instagram:hover {
+  background-color: lightgray;
 }
 @keyframes instaslide {
   from {
@@ -538,6 +544,10 @@ nav::before {
   border-radius: 500px;
   transition: .3s;
 }
+.virtualcta:hover {
+  background-color: var(--primarycolor);
+  color: var(--whitetext);
+}
 .ctabutton:hover {
   background-color: var(--primarycolor);
   color: white;
@@ -631,14 +641,16 @@ nav::before {
   background-color: #ededed;
   padding: 3rem 2rem 3rem 5rem;
   max-width: 700px;
+
 }
 
 .abouttext {
   color: var(--bodytextcolor);
   padding-top: 1rem;
-  font-size: 1rem;
+  font-size: .9rem;
   line-height: 1.9rem;
   text-indent: 1rem;
+  font-weight: 400;
 
 }
 .aboutcta {
@@ -769,7 +781,7 @@ nav::before {
   margin-block: 3rem;
   background-color: white;
   -webkit-box-shadow: 0px 8px 26px -18px rgba(0,0,0,0.96);
- box-shadow: 0px 8px 26px -18px rgba(0,0,0,0.96);s
+ box-shadow: 0px 8px 26px -18px rgba(0,0,0,0.96);
 }
 
 
@@ -1079,7 +1091,9 @@ nav::before {
   flex-wrap: wrap;
 
 }
-
+.servicebannertitlehidden {
+  display: none;
+}
 .reviewbox {
   max-width: 400px;
   transition: .3s;
@@ -1146,7 +1160,7 @@ nav::before {
 }
 @keyframes toptobottom {
   from {
-    transform: translateY(-50px);
+    transform: translateY(-25px);
     opacity: 0;
   }
   to {
@@ -1156,7 +1170,7 @@ nav::before {
 }
 @keyframes bottomtotop {
   from {
-    transform: translateY(50px);
+    transform: translateY(25px);
     opacity: 0;
   }
   to {
@@ -1166,7 +1180,7 @@ nav::before {
 }
 @keyframes lefttoright {
   from {
-    transform: translateX(-100px);
+    transform: translateX(-50px);
     opacity: 0;
   }
   to {
@@ -1176,7 +1190,7 @@ nav::before {
 }
 @keyframes righttoleft {
   from {
-    transform: translateX(100px);
+    transform: translateX(50px);
     opacity: 0;
   }
   to {
@@ -1220,7 +1234,10 @@ nav::before {
 .fadein:nth-child(3){
   transition-delay: .5s;
 }
-
+.bold {
+  font-weight: 600;
+  letter-spacing: .1rem;
+}
 
 .contact {
   background: linear-gradient(rgba(255,255,255,.93), rgba(255,255,255,.93)), url("Images/bottombackground.jpg");
@@ -1230,14 +1247,14 @@ nav::before {
   overflow: hidden;
   padding: 1rem;
 
-
 }
+
 
 .contactus {
   background: white;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  max-width: 900px;
+  max-width: 980px;
   margin: 6rem auto;
   padding: 2rem;
   border: 1px solid rgba(0, 0, 0, 0.4);
@@ -1245,7 +1262,7 @@ nav::before {
 }
 
 .leftcontact {
-  padding-right: 2rem;
+  padding-right: 3rem;
 }
 .leftcontact h3 {
   text-transform: uppercase;
@@ -1275,6 +1292,7 @@ nav::before {
   font-size: 1.25rem;
   font-weight: 600;
   color: var(--bodytextcolor);
+  white-space: nowrap;
 
 }
 
@@ -1282,6 +1300,7 @@ nav::before {
   color: var(--faqtextcolor);
   opacity: 1;
   padding-bottom: 2.5rem;
+  white-space: nowrap;
 }
 
 .contactbox {
@@ -1292,6 +1311,12 @@ nav::before {
   align-items: center;
 
   }
+
+
+  .rightcontact{
+
+  }
+
 
   .contact-svg {
     width: 30px;
@@ -1320,10 +1345,9 @@ nav::before {
     flex-direction: column;
     background: var(--servicegray);
     padding: 0 2rem;
-    max-width: 400px;
-    margin:auto;
     border: 1px solid rgba(0, 0, 0, 0.4);
     padding-top: 1rem;
+    max-width: 450px;
 
   }
 
@@ -1334,8 +1358,8 @@ nav::before {
     border: 1px solid rgba(0, 0, 0, 0.4);
   }
 .contactbutton {
-    margin-block: 2rem;
-    padding: .7rem 0;
+    margin-block: 1.5rem ;
+    padding: .7rem 0 !important;
     border: none;
     border-radius: none;
     background: var(--primarycolor);
@@ -1432,21 +1456,26 @@ nav::before {
 }
 .servicebannertitle {
   position: relative;
-  background-color:  #eff0f1;
-  padding: 2.5rem 2rem;
+  background-color: #f2f2f2;
   right: -50px;
   width: 100%;
   height: 80%;
-
+  padding: 1rem 1rem 1rem 2rem;
+  min-width: 383px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
+
 .servicebannertitle h4 {
   font-size: 1.8rem;
   font-weight: 600;
-  padding-bottom: 1rem;
+  padding-block: .5rem;
 }
 .servicebannertitle p {
   font-weight: 500;
   line-height: 1.5rem;
+  max-width: 400px;
 }
 .repairbannerright,
 .aboutbannerright,
@@ -1458,6 +1487,8 @@ nav::before {
   background-position: center;
   background-size: cover;
   flex: 2;
+  position: relative;
+  z-index: -1;
 }
 .aboutbannerright {
   background-image: url("images/aboutbanner1.jpg");
@@ -1480,7 +1511,7 @@ nav::before {
 
 .repairwrap {
   display: flex;
-  max-width: 1300px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 2rem 3rem 4rem 3rem;
 }
@@ -1492,11 +1523,13 @@ nav::before {
   font-weight: 500;
   text-transform: uppercase;
   font-size: 1.3rem;
+  text-align: center;
+  padding-inline: .5rem;
 }
 .serviceheader::before {
   content: '';
   position: absolute;
-  bottom: -10px;
+  bottom: -12px;
   left: 50%;
   transform: translate(-50%, 50%);
   width: 300px;
@@ -1510,7 +1543,8 @@ nav::before {
   margin: 0 auto;
   font-size: .95rem;
   margin-top: 1.5rem;
-  line-height: 1.6rem;
+  line-height: 1.7rem;
+  padding-inline: 1rem;
 }
 .repairimg {
   padding: 2rem 0 0 3rem;
@@ -1528,6 +1562,7 @@ nav::before {
 }
 .repaircontent{
   flex: 1;
+  max-width: 700px;
 }
 .aboutpagecontent h4,
 .repaircontent h4,
@@ -1541,6 +1576,8 @@ nav::before {
 .virtualcontent h4 {
   font-size: 2rem;
   padding-left: 1rem;
+  line-height: 2.5rem;
+
 }
 .repaircontent p,
 .aboutpagecontent p{
@@ -1569,12 +1606,17 @@ nav::before {
 .virtualicon {
   height: 140px;
   width: 125px;
+
+
 }
 .virtualimgwrap {
   display: flex;
   justify-content: center;
   margin-bottom: 2rem;
   align-items: center;
+  padding: 1rem 2rem;
+
+
 }
 .bottomvirtualtext {
   padding-top: 2rem;
@@ -1650,7 +1692,29 @@ nav::before {
 }
 
 @media (max-width: 1200px) {
+  .repaircontent h4 {
+    padding-top: 1rem;
+  }
+  .repairwrap {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    padding: 2rem 3rem 4rem 3rem;
+  }
+  .repairpic {
+    width: 400px;
+    height: 400px;
+  }
+  .repairimg {
+    padding: 2rem 0 0 0;
 
+  }
+  .repaircontent h4 {
+    text-align: center;
+  }
   .aboutwrap {
     flex-direction: column;
     justify-content: center;
@@ -1694,6 +1758,7 @@ nav::before {
 
   .virtualservice {
    line-height: 1.2rem;
+   padding: .75rem 1rem;
  }
   .virtualctatext {
     font-size: 1rem;
@@ -1752,6 +1817,14 @@ nav::before {
 
 
 @media (max-width: 920px){
+
+  .nav-link a:hover {
+    color: var(--whitetext);
+    background-color: #;
+  }
+  .dropdown-link a:hover {
+    background-color: var(--dropdownresponsive);
+  }
     .hamburger-menu-container{
         display: inline-flex;
         animation: slideIn 2s forwards;
@@ -1937,6 +2010,33 @@ nav::before {
     }
 }
 
+@media (max-width: 880px) {
+  .servicebannerwrap {
+    flex-direction: column;
+    height: 200px;
+    padding-bottom: 0;
+  }
+  .repairbannerright {
+
+  }
+  .servicebannerleft {
+    display: none;
+  }
+  .servicebannertitlehidden {
+    display: block;
+    background-color:  #eff0f1;
+    text-align: center;
+    width: 100%;
+    padding: .5rem;
+    box-shadow: 0px 8px 26px -18px rgba(0,0,0,0.96);
+  }
+  .servicebannertitlehidden h4 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    padding-bottom: .25rem;
+  }
+
+}
 
 @media (max-width: 800px) {
   .phone {
@@ -1996,19 +2096,70 @@ nav::before {
 }
 
 @media (max-width: 550px){
+  .virtualimgwrap {
+    padding-inline: 0;
+  }
+  .repairpicdrain {
+    box-shadow: none;
+    width: 100%;
+    height: auto;
+  }
   .wholefaqwrap .faqspaimg {
     width: 100%;
     height: auto;
   }
+  .repairwrap {
+    padding: 2rem 1rem 4rem 1rem;
+  }
 }
 
 @media (max-width: 500px) {
+  .contact-form {
+      padding: 0 1rem;
+      padding-top: .5rem;
 
+
+    }
+  .contactus {
+    margin-top: 2rem;
+    border: none;
+  }
+  .virtualcontent {
+    padding-top: 1rem;
+  }
+  .contact {
+    padding: 0;
+  }
+  .virtualheader {
+    font-size: 1.5rem !important;
+    padding: 0 !important;
+  }
+  .aboutpagecontent h4,
+  .repaircontent h4, {
+    font-size: 1.1rem;
+    padding-top: 1rem;
+  }
+  .serviceheader {
+    font-size: 1.1rem;
+
+  }
+  .serviceheader::before {
+    width: 200px;
+
+  }
+  .servicebannertitlehidden h4 {
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
+  .servicebannertitlehidden p {
+    font-size: .9rem;
+  }
   .virtualicon {
     overflow: hidden;
   }
   .virtualimgwrap {
     flex-direction: column;
+    margin-bottom: 0;
   }
   .spavector {
     display: none;
@@ -2030,9 +2181,25 @@ nav::before {
     .three {
      letter-spacing: normal;
      padding-block: 1rem;
-
+   }
+   .topheader {
+     width: 100%;
+     justify-content: center;
+   }
 }
+
 @media (max-width: 460px) {
+  .repairwrap {
+    padding-bottom: 2rem;
+  }
+  .repairpic {
+    box-shadow: none;
+    width: 100%;
+    height: auto;
+  }
+  .repairimg {
+    padding-top: 1rem;
+  }
   .about {
     padding: 0;
   }
@@ -2048,7 +2215,7 @@ nav::before {
   }
   .faqsection {
     padding-inline: 1rem;
-    padding-bottom: 3rem;
+    padding-bottom: 2rem;
   }
 
   .leftcontact {
@@ -2065,7 +2232,7 @@ nav::before {
     flex-direction: column;
   }
   .contactus {
-    padding: 1rem;
+    padding: .5rem;
   }
   .instagram {
     display: none;
