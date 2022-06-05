@@ -1,21 +1,3 @@
-<?php
-
-if(isset($_POST['passw']) && $_POST['passw'] != "")
-  die();
-
-$name = $_POST['name'];
-$email = $_POST['email'];
-$subject = $_POST['subject'];
-$message = $_POST['message'];
-
-$mailheader = "From:".$name."<".$email.">\r\n";
-
-$recipient = "spaoffice@spadoctor-va.com";
-
-mail($recipient, $subject, $message, $mailheader)
-or die("Error!");
-
-echo'
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -33,8 +15,3 @@ echo'
 
   </body>
 </html>
-
-
-';
-
- ?>

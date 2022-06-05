@@ -1,16 +1,14 @@
 <?php
 
-if(isset($_POST['passw']) && $_POST['passw'] != "")
-  die();
 
 $name = $_POST['name'];
 $email = $_POST['email'];
 $subject = $_POST['subject'];
 $message = $_POST['message'];
 
-$mailheader = "From:".$name."<".$email.">\r\n";
+$mailheader = "From:".$name."<".$email.">\r\n"
 
-$recipient = "spaoffice@spadoctor-va.com";
+$recipient = "kevinwilber@yahoo.com";
 
 mail($recipient, $subject, $message, $mailheader)
 or die("Error!");
@@ -21,14 +19,13 @@ echo'
   <head>
     <meta charset="utf-8">
     <title>Contact</title>
-    <link rel="stylesheet" href="stud/new.css">
+    <link rel="stylesheet" href="new.css">
   </head>
   <body>
 
 <div class="container">
-  <h1>Thank you for contacting us!</h1>
-  <h1>We will get back to you as soon as possible.</h1>
-   <a href="index.html" class="home">Go back to the Homepage</a>
+  <h1>Thank you for contacting me, I will get back to you as soons as possible</h1>
+   <p>Go back to the homepage</p>
 </div>
 
   </body>
