@@ -10,6 +10,10 @@ const navBarLinks = document.getElementsByClassName('nav-area')[0]
 const navBarLines = document.getElementsByClassName('bar')[0]
 const navBarLinesOne = document.getElementsByClassName('bar1')[0]
 const navBarLinesTwo = document.getElementsByClassName('bar2')[0]
+const blur = document.getElementsByClassName("blur")[0]
+const rotateBtn = document.getElementById('rotate-btn');
+const prefersDarkMode = localStorage.getItem('prefersDarkMode');
+
 
 
 window.addEventListener('scroll', revealService);
@@ -126,6 +130,7 @@ toggleButton.addEventListener('click', () => {
   navBarLines.classList.toggle('active')
   navBarLinesOne.classList.toggle('active')
   navBarLinesTwo.classList.toggle('active')
+  blur.classList.toggle('active')
 
 })
 
@@ -140,6 +145,42 @@ links.forEach(l => {
     navBarLines.classList.remove('active')
     navBarLinesOne.classList.remove('active')
     navBarLinesTwo.classList.remove('active')
+    blur.classList.toggle('active')
 
   })
 })
+
+
+
+// select the element you want to toggle classes on
+
+
+// set a variable to track if the classes are already toggled
+
+// add an event listener to the window that checks the screen width
+window.addEventListener('resize', () => {
+  if (window.innerWidth > 701) { // change 768 to your desired limit
+    navBarLinks.classList.remove('active');
+    navBarLines.classList.remove('active')
+    navBarLinesOne.classList.remove('active')
+    navBarLinesTwo.classList.remove('active')
+  }
+});
+
+
+if (prefersDarkMode === 'true') {
+  document.body.classList.add('dark-mode');
+  rotateBtn.classList.add('toggle-dark-mode');
+}
+
+rotateBtn.addEventListener('click', function() {
+  this.classList.toggle('rotate');
+  this.classList.toggle('toggle-dark-mode');
+
+  const body = document.body;
+  body.classList.toggle('dark-mode');
+  localStorage.setItem('prefersDarkMode', body.classList.contains('dark-mode'));
+
+  const container = document.querySelector('.darkcontainer');
+  container.classList.toggle('button-pressed');
+});
