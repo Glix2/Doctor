@@ -19,13 +19,13 @@ const prefersDarkMode = localStorage.getItem('prefersDarkMode');
 window.addEventListener('scroll', revealService);
 
 function revealService(){
-  var reveals = document.querySelectorAll('.slideIn, .spinin, .fadein');
+  var reveals = document.querySelectorAll('.slideIn, .spinin');
 
   for(var i = 0; i < reveals.length; i++){
 
     var windowheight = window.innerHeight;
     var revealtop = reveals[i].getBoundingClientRect().top;
-    var revealpoint = 150;
+    var revealpoint = 410;
 
     if(revealtop < windowheight - revealpoint){
       reveals[i].classList.add('active');
@@ -35,6 +35,21 @@ function revealService(){
 }
 
 
+var boxes = [
+  { selector: ".boxone", threshold: 1500 },
+  { selector: ".boxtwo", threshold: 2000 },
+  { selector: ".boxthree", threshold: 2500 },
+  { selector: ".boxfour", threshold: 3000 }
+];
+
+window.addEventListener("scroll", function() {
+  boxes.forEach(function(box) {
+    var el = document.querySelector(box.selector);
+    if (window.scrollY > box.threshold) {
+      el.classList.add("active");
+    }
+  });
+});
 
 window.addEventListener("scroll", function(){
   var header = document.querySelector(".returnarrowwrap");
