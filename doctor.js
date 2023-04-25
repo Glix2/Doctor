@@ -36,10 +36,10 @@ function revealService(){
 
 
 var boxes = [
-  { selector: ".boxone", threshold: 1500 },
-  { selector: ".boxtwo", threshold: 2000 },
-  { selector: ".boxthree", threshold: 2500 },
-  { selector: ".boxfour", threshold: 3000 }
+  { selector: ".boxone", threshold: 1400 },
+  { selector: ".boxtwo", threshold: 1900 },
+  { selector: ".boxthree", threshold: 2400 },
+  { selector: ".boxfour", threshold: 2800 }
 ];
 
 window.addEventListener("scroll", function() {
@@ -51,15 +51,17 @@ window.addEventListener("scroll", function() {
   });
 });
 
-window.addEventListener("scroll", function(){
-  var header = document.querySelector(".returnarrowwrap");
-  header.classList.toggle("sticky", window.scrollY > 1000);
-})
+
 
 window.addEventListener("scroll", function(){
-  var header = document.querySelector("navbox");
-  header.classList.toggle("stickynav", window.scrollY > 300);
-})
+  const elements = document.querySelectorAll(".headerwrap, .logobox, .topheader");
+  const isScrolled = window.scrollY > 0;
+
+  elements.forEach(element => {
+    element.classList.toggle("sticky", isScrolled);
+  });
+});
+
 
 function toggleAccordion() {
   const itemToggle = this.getAttribute('aria-expanded');
@@ -149,13 +151,10 @@ toggleButton.addEventListener('click', () => {
 
 })
 
-// GET ALL LINKS IN NAVBAR
 const links = document.querySelectorAll('.nav-area a')
 
 links.forEach(l => {
-  // BIND CLICK EVENT ON ALL LINKS
   l.addEventListener('click', () => {
-    // ON CLICK, REMOVE active CLASS FROM navBarLinks
     navBarLinks.classList.remove('active')
     navBarLines.classList.remove('active')
     navBarLinesOne.classList.remove('active')
@@ -167,14 +166,9 @@ links.forEach(l => {
 
 
 
-// select the element you want to toggle classes on
-
-
-// set a variable to track if the classes are already toggled
-
 // add an event listener to the window that checks the screen width
 window.addEventListener('resize', () => {
-  if (window.innerWidth > 701) { // change 768 to your desired limit
+  if (window.innerWidth > 701) { // change to your desired limit
     navBarLinks.classList.remove('active');
     navBarLines.classList.remove('active')
     navBarLinesOne.classList.remove('active')
@@ -217,3 +211,25 @@ buttons.forEach(button => {
     delete activeSlide.dataset.active
   })
 })
+
+// we make them images go brrrr //
+
+const carousel = document.querySelector('[data-carousel]');
+const slides = carousel.querySelector('[data-slides]');
+const nextButton = carousel.querySelector('[data-carousel-button="next"]');
+
+let currentSlide = 0;
+
+function showNextSlide() {
+  currentSlide = (currentSlide + 1) % slides.children.length;
+  slides.children[currentSlide].setAttribute('data-active', '');
+  slides.children[(currentSlide + slides.children.length - 1) % slides.children.length].removeAttribute('data-active');
+}
+
+let slideInterval = setInterval(showNextSlide, 8000);
+
+nextButton.addEventListener('click', () => {
+  clearInterval(slideInterval);
+  showNextSlide();
+  slideInterval = setInterval(showNextSlide, 8000);
+});
