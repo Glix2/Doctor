@@ -36,10 +36,10 @@ function revealService(){
 
 
 var boxes = [
-  { selector: ".boxone", threshold: 1400 },
-  { selector: ".boxtwo", threshold: 1900 },
-  { selector: ".boxthree", threshold: 2400 },
-  { selector: ".boxfour", threshold: 2800 }
+  { selector: ".boxone", threshold: 1300 },
+  { selector: ".boxtwo", threshold: 1800 },
+  { selector: ".boxthree", threshold: 2300 },
+  { selector: ".boxfour", threshold: 2700 }
 ];
 
 window.addEventListener("scroll", function() {
@@ -52,15 +52,24 @@ window.addEventListener("scroll", function() {
 });
 
 
+// Select the elements we want to make sticky
+const elements = document.querySelectorAll(".headerwrap, .logobox, .topheader, .t1, .spavector, .logowrap");
 
+// Add a scroll event listener to the window
 window.addEventListener("scroll", function(){
-  const elements = document.querySelectorAll(".headerwrap, .logobox, .topheader");
+  // Check if the user has scrolled past the top of the page
   const isScrolled = window.scrollY > 0;
 
+  // Add or remove the "sticky" class to the elements
   elements.forEach(element => {
-    element.classList.toggle("sticky", isScrolled);
+    if (isScrolled) {
+      element.classList.add("sticky");
+    } else {
+      element.classList.remove("sticky");
+    }
   });
 });
+
 
 
 function toggleAccordion() {
