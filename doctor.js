@@ -36,10 +36,10 @@ function revealService(){
 
 
 var boxes = [
-  { selector: ".boxone", threshold: 1300 },
-  { selector: ".boxtwo", threshold: 1800 },
-  { selector: ".boxthree", threshold: 2300 },
-  { selector: ".boxfour", threshold: 2700 }
+  { selector: ".boxone", threshold: 1000 },
+  { selector: ".boxtwo", threshold: 1500 },
+  { selector: ".boxthree", threshold: 1900 },
+  { selector: ".boxfour", threshold: 2300 }
 ];
 
 window.addEventListener("scroll", function() {
